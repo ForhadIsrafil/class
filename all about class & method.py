@@ -19,6 +19,7 @@ def positional_argu(name, **other_name):             # **other_name get & shows 
 positional_argu(name='forhad', second_name='israfil', third_name='tuhin', others_name='raset') # pass argu with key must
 # can be written in both positional and keyword arguments,here only for 1st parameter is positional
 positional_argu('forhad', second_name='israfil', third_name='tuhin', others_name='raset') # pass argu with key must
+#==========================================================================
 
 class A:
 
@@ -60,8 +61,24 @@ temp2 = r1.sub()
 print(temp2)
 temp3 = r1.mul()
 print(temp3)
+#==================================================================================================
+# python don't support method overloading, but support overriding
+#==================================================================================================
+# change class variable through object(using 'dunder method')
+class A:
+	v = 50
+	def __init__(self, a, b): # constructor/magic method, pre-define & auto called
+		self.a = a
+		self.b = b
 
+	def add(self):
+		return self.a + self.b
 
+	def mul(self):
+		return self.a * self.b
+ob = A(10, 15)
+ob.v = 100 # here the variable v of class A will be change.
+#==================================================================================================
 Polymorphic/Polymorphism Classes
 class Shark():
     def swim(self):
